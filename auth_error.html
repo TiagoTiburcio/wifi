@@ -1,0 +1,44 @@
+﻿<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Usu&aacute;rio Wifi SEED</title>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/qunit-1.11.0.css" type="text/css" media="all">	
+        <script language="JavaScript" type="text/javascript" src="css/validacampo.js"></script> 
+        <script src="js/w3data.js"></script>  
+        <script language="JavaScript" type="text/javascript" src="js/chat.js"></script> 
+    </head>
+    <body>
+        <header class="cabecalho"><img class="seed" src="images/seed_colorida.svg"/></header>
+        <h2 class="titulo"><strong>Wifi SEED</strong></h2>        
+        <fieldset class="container_portal">
+            <h3 class="legenda erro">CPF ou Senha Incorretos</h3>
+            <form id="login" name="login" method="post" action="$PORTAL_ACTION$" onsubmit="return validalogin(); return false;">
+                <div class="geral">
+                    <div class="campo">CPF: <span class="style1"> *</span><br>
+                        <input class="simple-field-data-mask-selectonfocus form-control campo-texto " data-mask="000.000.000-00" data-mask-selectonfocus="true" name="auth_user" type="text" id="auth_user">  
+                    </div> <br />
+                    <div class="campo">Senha: <span class="style1">*</span><br>
+                        <input class="form-control campo-texto" name="auth_pass" type="password" id="auth_pass">
+                        <br/><a href="esqueciminhasenha.html">Esqueci minha senha!</a>
+                    </div><br/>
+                    <span class="style1">* Campos com * s&atilde;o obrigat&oacute;rios!</span><br/>
+                    <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$">
+                    <input name="zone" type="hidden" value="$PORTAL_ZONE$"><br/>
+                    <button class="botao_login" name="accept" type="submit" value="Continue">Acessar</button>   <br />
+                    <a type="button" class="botao"  href="cadastro.html">Cadastro</a> <br />
+                <div/>
+            </form>
+        </fieldset>
+        <div w3-include-html="classe/footer.html"></div>        
+    <body/>
+    <script> w3IncludeHTML();</script>
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="js/qunit-1.11.0.js"></script>
+    <script type="text/javascript" src="js/sinon-1.10.3.js"></script>
+    <script type="text/javascript" src="js/sinon-qunit-1.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.test.js"></script>        
+<html/>
