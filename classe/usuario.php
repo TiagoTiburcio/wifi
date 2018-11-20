@@ -107,7 +107,7 @@ class Usuario extends database {
 
     function gravaUsuarioNovo($_cpf, $_nome, $_senha, $_nascimento, $_termo) {
         $resultado = $this->testeUsuarioGravado($_cpf);
-        $senhaCodificada = sha1($_senha);
+        $senhaCodificada = $_senha;
         if ($resultado == 0) {
             $query = "INSERT INTO `usuariowifi`(`nome`,`nascimento`,`cpf`,`termo`,`senha`)VALUES('$_nome','$_nascimento','$_cpf','$_termo','$senhaCodificada')";
             $query2 = "INSERT INTO `radcheck`(`username`,`attribute`,`op`,`value`)VALUES('$_cpf','Cleartext-Password',':=','$senhaCodificada')";

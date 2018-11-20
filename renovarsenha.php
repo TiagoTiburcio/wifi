@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <meta charset="UTF-8"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Wifi SEED</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css" />           
@@ -37,7 +38,7 @@
                 if ($passo == "") {
                     echo '<form id="login" name="login" method="post" action="" onsubmit="return validaesqueciminhasenha(); return false;"> <div class="geral"> '
                     . '<div class="campo">CPF: <span class="style1"> *</span><br>  <input class="simple-field-data-mask-selectonfocus form-control campo-texto " data-mask="000.000.000-00" data-mask-selectonfocus="true" name="cpf" type="text" id="cpf"> <input  name="passo" id="passo" value="0" hidden="" > </div> <br/>'
-                    . ' <button class="botao_login" name="accept" type="submit" value="Continue">Alterar Senha</button><br /> <a type="button" class="botao"  href="cadastro.html">Cadastro</a><br /> <div/> </form>';
+                    . ' <button class="botao_login" name="accept" type="submit" value="Continue">Alterar Senha</button><br /> <a type="button" class="botao"  href="cadastro.php">Cadastro</a><br /> <div/> </form>';
                 } elseif ($passo == "0") {
                     echo '<form id="login" name="login" method="post" action="renovarsenha.php" onsubmit="return validaRenove(); return false;">' .
                     '<div class="campo">CPF:<br> <input class="simple-field-data-mask-selectonfocus form-control campo-texto " data-mask="000.000.000-00" data-mask-selectonfocus="true" name="cpf" id="cpf" type="text" value=' . $usuario->getCpf() .
@@ -63,14 +64,14 @@
                     . '<input class="botao" name="cadastrar" type="submit" id="cadastrar" value="Validar com Primeiro Nome!" /><br/><p>&nbsp; </p> <form/>';
                 } elseif ($passo == "2" && $usuario->consultaParteNomeUsuario($cpf, $snome) != 1) {
                     echo "N&atilde;o foi possivel renovar sua senha tente cadastrar ou entre em contato com a<br/> CODIN/GEITEC - (79) 3194-3300<br/>"
-                    . '<a type="button" class="botao"  href="cadastro.html">Cadastro</a>   <br />';
+                    . '<a type="button" class="botao"  href="cadastro.php">Cadastro</a>   <br />';
                 } elseif ($passo == "3") {
                     $senha = filter_input(INPUT_POST, 'senha'); //atribuição do campo "senha" vindo do formulário para variavel
                     $usuario->gravaNovaSenha($cpf, $senha);
                 }
             } else {
                 echo 'CPF não Cadastrado na base de dados !!  <br/> Favor cadastrar clicando no botão abaixo <br/> '
-                . '<a type="button" class="botao"  href="cadastro.html">Cadastro</a>   <br />';
+                . '<a type="button" class="botao"  href="cadastro.php">Cadastro</a>   <br />';
             }
             ?>             
             <a type="button" class="botao_amarelo"  href="index.html">Voltar Tela Login!</a> <br />
