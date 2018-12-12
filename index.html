@@ -17,7 +17,7 @@
         </h2>
         <fieldset class="container_portal">
             <h3 class="legenda">Login</h3>
-            <form id="login" name="login" method="post" action="$PORTAL_ACTION$" onsubmit="return validalogin(); return false;">
+            <form id="login" name="login" method="post" action="http://10.0.0.1:8002/index.php?zone=seed" onsubmit="return validalogin(); return false;"> 
                 <div class="geral">
                     <div class="campo">
                         CPF: <span class="style1"> *</span><br>
@@ -29,8 +29,8 @@
                         <br/><a href="renovarsenha.php">Esqueci minha senha!</a>
                     </div><br/>
                         <span class="style1">* Campos com * s&atilde;o obrigat&oacute;rios!</span><br/>
-                        <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$">
-                        <input name="zone" type="hidden" value="$PORTAL_ZONE$"><br/>
+                        <input name="redirurl" type="hidden" value='http://seed.se.gov.br'>
+                        <input name="zone" type="hidden" value="seed"><br/>
                         <button class="botao_login" name="accept" type="submit" value="Continue">Acessar</button><br/>
                         <a type="button" class="botao"  href="cadastro.php">Cadastro</a><br/>
                 <div/>            
